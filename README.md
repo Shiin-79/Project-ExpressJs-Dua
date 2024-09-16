@@ -45,4 +45,4 @@ yarn start
 ``` 
 
 ## Lisensi
-Project ini dilisensikan di bawah MIT License.
+Project ini dilisensikan di bawah [MIT License](./LICENSE).
