@@ -28,6 +28,13 @@ Install dependencies dengan menggunakan perintah yarn:
 ```bash
 yarn install
 ``` 
+## Setup Database
+Migrate database dengan menggunakan perintah:
+
+```bash
+npx prisma migrate dev
+```
+
 ## Atur Variabel Lingkungan (Optional)
 Jika proyek ini memerlukan file .env untuk konfigurasi environment, buat file .env di root directory proyek dan tambahkan variabel lingkungan yang diperlukan seperti contoh di bawah ini:
 
