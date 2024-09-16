@@ -1,0 +1,13 @@
+{
+  "name": "project-expressjs-dua",
+  "version": "1.0.0",
+  "description": "Belajar ExpressJs Dua",
+  "main": "src/main.js",
+  "scripts": {
+    "test": "jest"
+  },
+  "repository": "https://github.com/Shiin-79/Project-ExpressJs-Dua.git",
+  "author": "Shiin79",
+  "license": "MIT",
+  "type": "module"
+}
