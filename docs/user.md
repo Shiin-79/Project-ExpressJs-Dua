@@ -126,7 +126,7 @@ Headers : Authorization = token
 
 ```Json
 {
-  "data" : "OK"
+  "data" : "Logout success"
 }
 ```
 
