@@ -48,6 +48,20 @@ export const createTestContact = async () => {
     });
 }
 
+export const createManyTestContact = async () => {
+  for (let i = 0; i < 15; i++) {
+    await prismaClient.contact.create({
+      data: {
+        username: "Test",
+        first_name: `Test ${i}`, // Gunakan backticks untuk interpolasi string
+        last_name: `Test ${i}`, // Gunakan backticks untuk interpolasi string
+        email: `Test${i}@email.com`, // Gunakan backticks untuk interpolasi string
+        phone: `08123456789${i}`, // Gunakan backticks untuk interpolasi string
+      },
+    });
+  }
+};
+
 export const getTestContact = async () => {
     return prismaClient.contact.findFirst({
         where: {
