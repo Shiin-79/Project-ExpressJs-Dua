@@ -1,6 +1,7 @@
-import { createContactValidation } from "../validation/contact-validation";
+import { createContactValidation, getContactValidation } from "../validation/contact-validation";
 import { validate } from "../validation/validation";
 import { prismaClient } from "../application/database.js";
+import { ResponseError } from "../error/response-error.js";
 const create = async (user, request) => {
     const contact = validate(createContactValidation, request); 
     contact.username = user.username
@@ -17,6 +18,27 @@ const create = async (user, request) => {
     });
 }
 
+const get = async (user, contactId) => {
+  contactId = validate(getContactValidation, contactId);
+  const contact = await prismaClient.contact.findFirst({
+    where: {
+      id: contactId,
+      username: user.username
+    },
+    select: {
+      id: true,
+      first_name: true,
+      last_name: true,
+      email: true,
+      phone: true,
+    }
+  });
+  if (!contact) {
+    throw new ResponseError(404, "Contact not found");
+  }
+  return contact
+}
 export default {
-    create
+  create,
+  get,
 }
