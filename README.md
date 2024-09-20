@@ -28,21 +28,21 @@ Install dependencies dengan menggunakan perintah yarn:
 ```bash
 yarn install
 ``` 
+## Atur Variabel Lingkungan
+Di proyek ini memerlukan file .env untuk konfigurasi environment, buat file .env di root directory proyek dan tambahkan variabel lingkungan yang diperlukan seperti contoh di bawah ini:
+
+```bash
+DATABASE_URL="mysql://root:PasswordMysql@url:port/namadatabase"
+```
+ubah variabel lingkungan sesuai kebutuhanmu (PasswordMysql, url:port dan namadatabase)
+
+
 ## Setup Database
 Migrate database dengan menggunakan perintah:
 
 ```bash
 npx prisma migrate dev
 ```
-
-## Atur Variabel Lingkungan (Optional)
-Jika proyek ini memerlukan file .env untuk konfigurasi environment, buat file .env di root directory proyek dan tambahkan variabel lingkungan yang diperlukan seperti contoh di bawah ini:
-
-```bash
-DATABASE_URL="mysql://root:PasswordMysql@localhost:3306/namadatabase"
-
-```
-ubah variabel lingkungan sesuai kebutuhanmu (PasswordMysql dan namadatabase)
 
 ## Run Server
 Mulai server dengan menggunakan perintah yarn start:
