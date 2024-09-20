@@ -1,11 +1,15 @@
+// Mengimpor modul Express dan kontroler pengguna
 import express from "express";
 import userController from "../controller/user-controller.js";
 
+// Membuat router baru untuk rute publik
 const publicRoute = new express.Router();
-publicRoute.post('/api/users', userController.register);
-publicRoute.post('/api/users/login', userController.login);
 
+// Rute untuk registrasi pengguna
+publicRoute.post("/api/users", userController.register);
 
-export {
-    publicRoute,
-}
+// Rute untuk login pengguna
+publicRoute.post("/api/users/login", userController.login);
+
+// Mengekspor publicRoute agar dapat digunakan di modul lain
+export { publicRoute };
